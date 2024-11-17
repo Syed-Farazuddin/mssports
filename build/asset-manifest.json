@@ -1,34 +1,21 @@
 {
   "files": {
-    "main.css": "/sjb-interiors/static/css/main.f98be4cb.css",
-    "main.js": "/sjb-interiors/static/js/main.35347999.js",
-    "static/media/hd7.png": "/sjb-interiors/static/media/hd7.c2c08871c21e31cd994c.png",
-    "static/media/chair3.png": "/sjb-interiors/static/media/chair3.d4f578c26f2f3d05255c.png",
-    "static/media/chari2.jpg": "/sjb-interiors/static/media/chari2.d4633db53e81e91ac846.jpg",
-    "static/media/hd.jpg": "/sjb-interiors/static/media/hd.82482715d43068a8236a.jpg",
-    "static/media/hd2.jpg": "/sjb-interiors/static/media/hd2.4dd6abee610922114467.jpg",
-    "static/media/hd6.jpg": "/sjb-interiors/static/media/hd6.e1d3b019f7c1190d7c96.jpg",
-    "static/media/goodone.jpg": "/sjb-interiors/static/media/goodone.a0706ae5c21a42d43f52.jpg",
-    "static/media/background2.jpg": "/sjb-interiors/static/media/background2.e951438462fcba83a4be.jpg",
-    "static/media/hd8.jpg": "/sjb-interiors/static/media/hd8.bcb63b2a622c3f361d6c.jpg",
-    "static/media/hd11.jpg": "/sjb-interiors/static/media/hd11.2fb29348f6514481a6b0.jpg",
-    "static/media/chair1.jpg": "/sjb-interiors/static/media/chair1.7e307b4753f0b0a10f3a.jpg",
-    "static/media/hd1.jpg": "/sjb-interiors/static/media/hd1.6effe993bffe100bc4b2.jpg",
-    "static/media/background3.jpg": "/sjb-interiors/static/media/background3.c8913c7c7b659726f4d2.jpg",
-    "static/media/hd9.jpg": "/sjb-interiors/static/media/hd9.0920689bdc76b0cf095a.jpg",
-    "static/media/background4.jpg": "/sjb-interiors/static/media/background4.c3436daf7245a98c4534.jpg",
-    "static/media/hd5.jpg": "/sjb-interiors/static/media/hd5.f5e50c633394e975e47e.jpg",
-    "static/media/background1.jpg": "/sjb-interiors/static/media/background1.8aa50ee0e28ea9e85e87.jpg",
-    "static/media/interior5.jpg": "/sjb-interiors/static/media/interior5.8af563767be02f1ce442.jpg",
-    "static/media/hd10.jpg": "/sjb-interiors/static/media/hd10.31574d53442bc1ce9504.jpg",
-    "static/media/hd3.jpg": "/sjb-interiors/static/media/hd3.b5301ae89b42ae373a5f.jpg",
-    "static/media/hd4.jpg": "/sjb-interiors/static/media/hd4.f4a0976b6d87a9e46403.jpg",
-    "index.html": "/sjb-interiors/index.html",
-    "main.f98be4cb.css.map": "/sjb-interiors/static/css/main.f98be4cb.css.map",
-    "main.35347999.js.map": "/sjb-interiors/static/js/main.35347999.js.map"
+    "main.css": "/static/css/main.d2603bdc.css",
+    "main.js": "/static/js/main.1ad4e3c7.js",
+    "static/media/video1.mp4": "/static/media/video1.185a24f8fa66417c1061.mp4",
+    "static/media/interior5.jpg": "/static/media/interior5.082f49ca6560320265d9.jpg",
+    "static/media/goodone.jpg": "/static/media/goodone.596a32409516650ebf93.jpg",
+    "static/media/chair2.jpg": "/static/media/chair2.69956e2666b72fcd96ef.jpg",
+    "static/media/background4.jpg": "/static/media/background4.07ad90cc69f47318c2dc.jpg",
+    "static/media/chair3.jpg": "/static/media/chair3.97b3ef315fd1a313c2e8.jpg",
+    "static/media/chair1.jpg": "/static/media/chair1.8837797736b2b5750ba2.jpg",
+    "static/media/logo.jpg": "/static/media/logo.dc51537dd025821973bd.jpg",
+    "index.html": "/index.html",
+    "main.d2603bdc.css.map": "/static/css/main.d2603bdc.css.map",
+    "main.1ad4e3c7.js.map": "/static/js/main.1ad4e3c7.js.map"
   },
   "entrypoints": [
-    "static/css/main.f98be4cb.css",
-    "static/js/main.35347999.js"
+    "static/css/main.d2603bdc.css",
+    "static/js/main.1ad4e3c7.js"
   ]
 }

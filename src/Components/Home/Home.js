@@ -2,25 +2,11 @@ import React, { useState } from "react";
 import "../common/common.css";
 import goodOne from "../../assets/goodone.jpg";
 import chairOne from "../../assets/chair1.jpg";
-import chairTwo from "../../assets/chari2.jpg";
-import chairThree from "../../assets/chair3.png";
+import chairTwo from "../../assets/chair2.jpg";
+import chairThree from "../../assets/chair3.jpg";
 import interior5 from "../../assets//interior5.jpg";
-import background1 from "../../assets//background1.jpg";
-import background2 from "../../assets//background2.jpg";
-import background3 from "../../assets//background3.jpg";
-import hd from "../../assets//hd.jpg";
-import hd1 from "../../assets//hd1.jpg";
-import hd2 from "../../assets//hd2.jpg";
-import hd3 from "../../assets//hd3.jpg";
-import hd4 from "../../assets//hd4.jpg";
-import hd5 from "../../assets//hd5.jpg";
-import hd6 from "../../assets//hd6.jpg";
-import hd7 from "../../assets//hd7.png";
-import hd8 from "../../assets//hd8.jpg";
-import hd9 from "../../assets//hd9.jpg";
-import hd10 from "../../assets//hd10.jpg";
-import hd11 from "../../assets//hd11.jpg";
-
+import logo from "../../assets/logo.jpg";
+import video from "../../assets/video1.mp4";
 <script
   src="https://kit.fontawesome.com/34e52d2b48.js"
   crossorigin="anonymous"
@@ -32,10 +18,12 @@ const Home = () => {
     <>
       <section>
         <div className="page">
-          <header class="header">
-            <nav class="flexbox" id="nav_bar">
-              <div class="logo">
-                <h1>SJB INTERIORS</h1>
+          <header className="header">
+            <nav className="flexbox" id="nav_bar">
+              <div className="logo">
+                <img alt="img" src={logo} width={150} height={150} />
+                <h3 className="logo_text">MS SPORTS</h3>
+                {/* <h1>MS SPORTS</h1> */}
               </div>
               <div className="responsive_nav_bar">
                 <a
@@ -50,12 +38,12 @@ const Home = () => {
                   }}
                 >
                   {menu ? (
-                    <i class="fa-solid fa-bars"></i>
+                    <i className="fa-solid fa-bars"></i>
                   ) : (
-                    <i class="fa-solid fa-xmark"></i>
+                    <i className="fa-solid fa-xmark"></i>
                   )}
                 </a>
-                <div class="nav-items flexbox" id="nav_items">
+                <div className="nav-items flexbox" id="nav_items">
                   <ul>
                     <a href="#designs">
                       <li>Top Designs</li>
@@ -75,8 +63,10 @@ const Home = () => {
           {/*............... Section 2 ................ */}
 
           <div className="section2 flexbox" id="home">
-            <div className="Page_title">
-              <h1 className="h1">Let's Build your dreams together. </h1>
+            <div className="Page_title flex1">
+              <h1 className="h1">
+                Crafted for Performance, Designed for Champions
+              </h1>
             </div>
             <div className="page_image">
               <img alt="img" src={goodOne} />
@@ -89,11 +79,10 @@ const Home = () => {
         <div className="section3" id="aboutUs">
           <div className="info">
             <h1 className="heading">Crafted With Excellent Material</h1>
-            <p>
-              Luxury is in each detail with these exquisite pieces. Sit with
-              comfort, sit with luxury, Create your perfect room with our
-              perfect furniture created with brilliance
-            </p>
+            <p>Experience the Perfect Swing Every Time</p>
+            <p>Where Quality Meets Affordability</p>
+            <p>Pure Kashmir Willow Bats, Light Weight and Well Balanced</p>
+            <p>All over India 🇮🇳 delivery 🌏</p>
           </div>
           <div className="images">
             <img alt="" src={chairOne} />
@@ -102,70 +91,79 @@ const Home = () => {
           </div>
         </div>
       </section>
-
       {/*............ Testinomials section............ */}
-
       <section id="testimonials">
         <div
           id="carouselExampleControls"
-          class="carousel slide"
+          className="carousel slide"
           data-bs-ride="carousel"
         >
-          <div class="carousel-inner">
+          <div className="carousel-inner">
             <h1 className="Why">Why Choose Us ?</h1>
 
-            {/* <!-- First Testimonial --> */}
-
-            <div class="carousel-item active">
+            {/* <!-- First Testimonial -->*/}
+            <div className="carousel-item active">
               <h2>
                 Easy To Shop and Contact.We are always there to support and
                 reach you as soon as possible
               </h2>
               <em></em>
             </div>
-
             {/* <!-- Second Testimonial --> */}
-
-            <div class="carousel-item">
-              <h2 class="testimonial-text">
-                24/7 support.The employees and staff of SJB interiors are
-                available at any time you want to reach
+            <div className="carousel-item">
+              <h2 className="testimonial-text">
+                24/7 support.The staff of MS Sports are available at any time
+                you want to reach
               </h2>
               <em></em>
             </div>
 
-            <div class="carousel-item">
-              <h2 class="testimonial-text">
-                Best Quality Products. The products of SJB interiors are made by
-                choosing the material carefully and the design is made by the
-                top designers
+            <div className="carousel-item">
+              <h2 className="testimonial-text">
+                Best Quality Products. The products of MS Sports are made by
+                choosing the material carefully and you can customize your bats
+                as you will.
               </h2>
               <em></em>
             </div>
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExampleControls"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#carouselExampleControls"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
       </section>
-
+      <section>
+        <div className="customize">
+          <h1 className="custom">Customize Your Bats </h1>
+          <video width="320" height="240" controls>
+            <source src={video} type="video/mp4" />
+            {/* <source src="video1.mp4" type="video/mp4" /> */}
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
       {/* .......Section 4 ............. */}
-
       <section id="section4">
         <div className="interior_design">
           <div className="photo">
@@ -175,27 +173,24 @@ const Home = () => {
           </div>
         </div>
         <div className="info" id="info2">
-          <h1>We help you to make modern interior design</h1>
+          <h1> Crafting Excellence for Every Cricket Enthusiast</h1>
           <p>
-            Let our interior design ideas be the stepping stone towards your
-            dream home. From modular kitchens to stunning full home interiors,
-            we've got it all! With our modern designs we can turn your home into
-            an extraordinary place to live. Your just a step behind of making
-            your dream true. Contact us lets make your dream true!
+            With a commitment to quality and customer satisfaction, we strive to
+            empower cricket enthusiasts with equipment that inspires confidence
+            and precision on the field. Whether you’re a budding cricketer or a
+            seasoned player, our bats are built to help you ace every shot.
           </p>
         </div>
       </section>
-
       {/* .................. Testinomials for images ............ */}
-
-      <section id="testimonials">
-        <div id="carouselExampleIndicators" class="carousel slide">
-          <div class="carousel-indicators">
+      {/* <section id="testimonials">
+        <div id="carouselExampleIndicators" className="carousel slide">
+          <div className="carousel-indicators">
             <button
               type="button"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="0"
-              class="active"
+              className="active"
               aria-current="true"
               aria-label="Slide 1"
             ></button>
@@ -224,8 +219,8 @@ const Home = () => {
               aria-label="Slide 5"
             ></button>
           </div>
-          <div class="carousel-inner" id="designs">
-            <div class="carousel-item active">
+          <div className="carousel-inner" id="designs">
+            <div className="carousel-item active">
               <h2>Some of the top designs</h2>
               <img
                 className="testimonial-image"
@@ -243,7 +238,7 @@ const Home = () => {
                 alt="sample design"
               />
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <h2>Some of the top designs</h2>
               <img
                 className="testimonial-image"
@@ -261,7 +256,7 @@ const Home = () => {
                 alt="sample design"
               />
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <h2>Some of the top designs</h2>
               <img className="testimonial-image" src={hd} alt="sample design" />
               <img
@@ -275,7 +270,7 @@ const Home = () => {
                 alt="sample design"
               />
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <h2>Some of the top designs</h2>
               <img
                 className="testimonial-image"
@@ -293,7 +288,7 @@ const Home = () => {
                 alt="sample design"
               />
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <h2>Some of the top designs</h2>
               <img
                 className="testimonial-image"
@@ -313,35 +308,36 @@ const Home = () => {
             </div>
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#carouselExampleIndicators"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
       </section>
+       */}
       <footer id="contact">
         <div className="contact">
           <h1>
-            Thank you for contacting SJB Interior Designs! Please let us know
-            how we can help you.
+            Thank you for contacting MS SPORTS! Please let us know how we can
+            help you.
           </h1>
           <div id="social">
             <div className="socials">
               <a
-                href="https://instagram.com/sjb_designz?igshid=YmMyMTA2M2Y="
+                href="https://instagram.com/mssports1225/profilecard/?igshid=dHRjZDJyM2p1ajF1"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -349,17 +345,17 @@ const Home = () => {
               </a>
             </div>
             <div className="socials">
-              <a href="tel:+919581248990" target="_blank" rel="noreferrer">
-                <i class="fa-sharp fa-solid fa-phone"></i>
+              <a href="tel:+918143423272" target="_blank" rel="noreferrer">
+                <i className="fa-sharp fa-solid fa-phone"></i>
               </a>
             </div>
             <div className="socials">
               <a
-                href="https://wa.me/917013292693"
+                href="https://wa.me/918143423272"
                 target="_blank"
                 rel="noreferrer"
               >
-                <i class="fa-brands fa-whatsapp"></i>
+                <i className="fa-brands fa-whatsapp"></i>
               </a>
             </div>
           </div>
