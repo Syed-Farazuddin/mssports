@@ -21,7 +21,7 @@ const Home = () => {
           <header className="header">
             <nav className="flexbox" id="nav_bar">
               <div className="logo">
-                <img alt="img" src={logo} width={150} height={150} />
+                <img alt="img" src={logo} width={50} height={50} />
                 <h3 className="logo_text">MS SPORTS</h3>
                 {/* <h1>MS SPORTS</h1> */}
               </div>
