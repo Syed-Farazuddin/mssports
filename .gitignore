@@ -55,9 +55,9 @@ coverage/
 *.local
 
 # Ignore static assets (optional, if served externally)
-*.mp4
-*.avi
-*.mov
+# *.mp4
+# *.avi
+# *.mov
 
 # Ignore specific environment folders
 .envrc

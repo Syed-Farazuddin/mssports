@@ -1,367 +1,252 @@
-import React, { useState } from "react";
-import "../common/common.css";
+import React, { useState, useEffect } from "react";
+import "./Home.css";
 import goodOne from "../../assets/goodone.jpg";
-import chairOne from "../../assets/chair1.jpg";
-import chairTwo from "../../assets/chair2.jpg";
-import chairThree from "../../assets/chair3.jpg";
-import interior5 from "../../assets//interior5.jpg";
+import craftImage from "../../assets/interior5.jpg";
 import logo from "../../assets/logo.jpg";
 import video from "../../assets/video1.mp4";
-<script
-  src="https://kit.fontawesome.com/34e52d2b48.js"
-  crossorigin="anonymous"
-></script>;
+
+const CALL_NUMBER = "9866858310";
+const CALL_HREF = "tel:+919866858310";
+const WHATSAPP_DISPLAY = "+91 81434 23272";
+const WHATSAPP_HREF = "https://wa.me/918143423272";
+const INSTAGRAM_URL =
+  "https://instagram.com/mssports1225/profilecard/?igshid=dHRjZDJyM2p1ajF1";
 
 const Home = () => {
-  const [menu, setMenu] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
-    <>
-      <section>
-        <div className="page">
-          <header className="header">
-            <nav className="flexbox" id="nav_bar">
-              <div className="logo">
-                <img alt="img" src={logo} width={50} height={50} />
-                <h3 className="logo_text">MS SPORTS</h3>
-                {/* <h1>MS SPORTS</h1> */}
-              </div>
-              <div className="responsive_nav_bar">
-                <a
-                  href="#menu"
-                  id="menu-bar"
-                  onClick={() => {
-                    setMenu(!menu);
-                    console.log("The menu bar is clicked");
-                    document
-                      .getElementById("nav_items")
-                      .classList.toggle("pop_sidebar");
-                  }}
-                >
-                  {menu ? (
-                    <i className="fa-solid fa-bars"></i>
-                  ) : (
-                    <i className="fa-solid fa-xmark"></i>
-                  )}
-                </a>
-                <div className="nav-items flexbox" id="nav_items">
-                  <ul>
-                    <a href="#designs">
-                      <li>Top Designs</li>
-                    </a>
-                    <a href="#aboutUs">
-                      <li>About us</li>
-                    </a>
-                    <a href="#contact">
-                      <li>Contact</li>
-                    </a>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-          </header>
+    <div className="ms-home">
+      <header className={`ms-header ${scrolled ? "ms-header--scrolled" : ""}`}>
+        <nav className="ms-nav">
+          <a href="#home" className="ms-logo" onClick={closeMenu}>
+            <img src={logo} alt="MS Sports logo" />
+            <span>MS SPORTS</span>
+          </a>
 
-          {/*............... Section 2 ................ */}
+          <ul className="ms-nav-links ms-nav-links--desktop">
+            <li>
+              <a href="#aboutUs">About</a>
+            </li>
+            <li>
+              <a href="#why">Why Us</a>
+            </li>
+            <li>
+              <a href="#customize">Customize</a>
+            </li>
+            <li>
+              <a href="#contact" className="ms-nav-cta">
+                <i className="fa-solid fa-phone" aria-hidden="true" />
+                Contact
+              </a>
+            </li>
+          </ul>
 
-          <div className="section2 flexbox" id="home">
-            <div className="Page_title flex1">
-              <h1 className="h1">
-                Crafted for Performance, Designed for Champions
-              </h1>
-            </div>
-            <div className="page_image">
-              <img alt="img" src={goodOne} />
-            </div>
+          <button
+            type="button"
+            className="ms-menu-toggle"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <i
+              className={`fa-solid ${menuOpen ? "fa-xmark" : "fa-bars"}`}
+              aria-hidden="true"
+            />
+          </button>
+        </nav>
+
+        {menuOpen && (
+          <div className="ms-nav-mobile">
+            <a href="#aboutUs" onClick={closeMenu}>
+              About
+            </a>
+            <a href="#why" onClick={closeMenu}>
+              Why Us
+            </a>
+            <a href="#customize" onClick={closeMenu}>
+              Customize
+            </a>
+            <a href="#contact" className="ms-nav-cta" onClick={closeMenu}>
+              Contact
+            </a>
+          </div>
+        )}
+      </header>
+
+      <section className="ms-hero" id="home">
+        <div className="ms-hero-content">
+          <span className="ms-hero-badge">Premium Cricket Equipment</span>
+          <h1>Crafted for Performance, Designed for Champions</h1>
+          <p className="ms-hero-sub">
+            Pure Kashmir willow bats — lightweight, well balanced, and built for
+            every shot. Quality you can trust, delivered across India.
+          </p>
+          <div className="ms-hero-actions">
+            <a href={CALL_HREF} className="ms-btn ms-btn--primary">
+              <i className="fa-solid fa-phone" aria-hidden="true" />
+              Call {CALL_NUMBER}
+            </a>
+            <a
+              href={WHATSAPP_HREF}
+              target="_blank"
+              rel="noreferrer"
+              className="ms-btn ms-btn--whatsapp"
+            >
+              <i className="fa-brands fa-whatsapp" aria-hidden="true" />
+              WhatsApp Us
+            </a>
+            <a href="#aboutUs" className="ms-btn ms-btn--outline">
+              Explore Bats
+            </a>
           </div>
         </div>
+        <div className="ms-hero-visual">
+          <img src={goodOne} alt="MS Sports premium cricket bat" />
+        </div>
+      </section>
 
-        {/* ....................Section 3 ................ */}
-
-        <div className="section3" id="aboutUs">
-          <div className="info">
-            <h1 className="heading">Crafted With Excellent Material</h1>
-            <p>Experience the Perfect Swing Every Time</p>
-            <p>Where Quality Meets Affordability</p>
-            <p>Pure Kashmir Willow Bats, Light Weight and Well Balanced</p>
-            <p>All over India 🇮🇳 delivery 🌏</p>
+      <section className="ms-features" id="aboutUs">
+        <div className="ms-features-inner">
+          <div>
+            <p className="ms-section-label">Our Craft</p>
+            <h2>Crafted With Excellent Material</h2>
+            <ul className="ms-feature-list">
+              <li>
+                <i className="fa-solid fa-check" aria-hidden="true" />
+                Experience the perfect swing, every time
+              </li>
+              <li>
+                <i className="fa-solid fa-check" aria-hidden="true" />
+                Where quality meets affordability
+              </li>
+              <li>
+                <i className="fa-solid fa-check" aria-hidden="true" />
+                Pure Kashmir willow — lightweight &amp; well balanced
+              </li>
+              <li>
+                <i className="fa-solid fa-check" aria-hidden="true" />
+                All-over India delivery
+              </li>
+            </ul>
           </div>
-          <div className="images">
-            <img alt="" src={chairOne} />
-            <img alt="" src={chairThree} />
-            <img alt="" src={chairTwo} />
+          <div className="ms-features-visual">
+            <img src={goodOne} alt="MS Sports Kashmir willow cricket bat" />
           </div>
         </div>
       </section>
-      {/*............ Testinomials section............ */}
-      <section id="testimonials">
-        <div
-          id="carouselExampleControls"
-          className="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div className="carousel-inner">
-            <h1 className="Why">Why Choose Us ?</h1>
 
-            {/* <!-- First Testimonial -->*/}
-            <div className="carousel-item active">
-              <h2>
-                Easy To Shop and Contact.We are always there to support and
-                reach you as soon as possible
-              </h2>
-              <em></em>
+      <section className="ms-why" id="why">
+        <h2>Why Choose MS Sports?</h2>
+        <div className="ms-why-grid">
+          <article className="ms-why-card">
+            <i className="fa-solid fa-bag-shopping" aria-hidden="true" />
+            <h3>Easy to Shop</h3>
+            <p>
+              Simple ordering and direct contact — we reach you as soon as
+              possible whenever you need us.
+            </p>
+          </article>
+          <article className="ms-why-card">
+            <i className="fa-solid fa-headset" aria-hidden="true" />
+            <h3>24/7 Support</h3>
+            <p>
+              The MS Sports team is available whenever you want to reach out,
+              day or night.
+            </p>
+          </article>
+          <article className="ms-why-card">
+            <div className="ms-stars" aria-label="5 out of 5 stars">
+              {[...Array(5)].map((_, i) => (
+                <i key={i} className="fa-solid fa-star" aria-hidden="true" />
+              ))}
             </div>
-            {/* <!-- Second Testimonial --> */}
-            <div className="carousel-item">
-              <h2 className="testimonial-text">
-                24/7 support.The staff of MS Sports are available at any time
-                you want to reach
-              </h2>
-              <em></em>
-            </div>
-
-            <div className="carousel-item">
-              <h2 className="testimonial-text">
-                Best Quality Products. The products of MS Sports are made by
-                choosing the material carefully and you can customize your bats
-                as you will.
-              </h2>
-              <em></em>
-            </div>
-          </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev"
-          >
-            <span
-              className="carousel-control-prev-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="next"
-          >
-            <span
-              className="carousel-control-next-icon"
-              aria-hidden="true"
-            ></span>
-            <span className="visually-hidden">Next</span>
-          </button>
+            <h3>Best Quality</h3>
+            <p>
+              Carefully selected materials and full customization — build your
+              bat exactly how you want it.
+            </p>
+          </article>
         </div>
       </section>
-      <section>
-        <div className="customize">
-          <h1 className="custom">Customize Your Bats </h1>
-          <video width="320" height="240" controls>
+
+      <section className="ms-video-section" id="customize">
+        <h2>Customize Your Bats</h2>
+        <p>See how we shape excellence — from willow to winning edge.</p>
+        <div className="ms-video-wrap">
+          <video controls playsInline preload="metadata">
             <source src={video} type="video/mp4" />
-            {/* <source src="video1.mp4" type="video/mp4" /> */}
             Your browser does not support the video tag.
           </video>
         </div>
       </section>
-      {/* .......Section 4 ............. */}
-      <section id="section4">
-        <div className="interior_design">
-          <div className="photo">
-            <div>
-              <img className="photos interior1" alt="img" src={interior5} />
-            </div>
-          </div>
+
+      <section className="ms-craft">
+        <div className="ms-craft-image">
+          <img src={craftImage} alt="MS Sports bat craftsmanship" />
         </div>
-        <div className="info" id="info2">
-          <h1> Crafting Excellence for Every Cricket Enthusiast</h1>
+        <div className="ms-craft-content">
+          <p className="ms-section-label">Excellence in Every Stroke</p>
+          <h2>Crafting Excellence for Every Cricket Enthusiast</h2>
           <p>
-            With a commitment to quality and customer satisfaction, we strive to
-            empower cricket enthusiasts with equipment that inspires confidence
-            and precision on the field. Whether you’re a budding cricketer or a
+            With a commitment to quality and customer satisfaction, we empower
+            cricket enthusiasts with equipment that inspires confidence and
+            precision on the field. Whether you&apos;re a budding cricketer or a
             seasoned player, our bats are built to help you ace every shot.
           </p>
         </div>
       </section>
-      {/* .................. Testinomials for images ............ */}
-      {/* <section id="testimonials">
-        <div id="carouselExampleIndicators" className="carousel slide">
-          <div className="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="0"
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="3"
-              aria-label="Slide 4"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleIndicators"
-              data-bs-slide-to="4"
-              aria-label="Slide 5"
-            ></button>
+
+      <footer className="ms-footer" id="contact">
+        <div className="ms-footer-inner">
+          <h2>Get in Touch</h2>
+          <p className="ms-footer-tagline">
+            Thank you for choosing MS Sports — tell us how we can help you.
+          </p>
+
+          <div className="ms-contact-grid">
+            <a href={CALL_HREF} className="ms-contact-card">
+              <i className="fa-solid fa-phone" aria-hidden="true" />
+              <span className="ms-contact-label">For Calls</span>
+              <span className="ms-contact-value">{CALL_NUMBER}</span>
+            </a>
+            <a
+              href={WHATSAPP_HREF}
+              target="_blank"
+              rel="noreferrer"
+              className="ms-contact-card"
+            >
+              <i className="fa-brands fa-whatsapp" aria-hidden="true" />
+              <span className="ms-contact-label">For WhatsApp</span>
+              <span className="ms-contact-value">{WHATSAPP_DISPLAY}</span>
+            </a>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="ms-contact-card"
+            >
+              <i className="fa-brands fa-instagram" aria-hidden="true" />
+              <span className="ms-contact-label">Instagram</span>
+              <span className="ms-contact-value">@mssports1225</span>
+            </a>
           </div>
-          <div className="carousel-inner" id="designs">
-            <div className="carousel-item active">
-              <h2>Some of the top designs</h2>
-              <img
-                className="testimonial-image"
-                src={background1}
-                alt="sample design"
-              />
-              <img
-                className="testimonial-image"
-                src={background2}
-                alt="sample design"
-              />
-              <img
-                className="testimonial-image"
-                src={background3}
-                alt="sample design"
-              />
-            </div>
-            <div className="carousel-item">
-              <h2>Some of the top designs</h2>
-              <img
-                className="testimonial-image"
-                src={hd3}
-                alt="sample design"
-              />
-              <img
-                className="testimonial-image"
-                src={hd4}
-                alt="sample design"
-              />
-              <img
-                className="testimonial-image"
-                src={hd5}
-                alt="sample design"
-              />
-            </div>
-            <div className="carousel-item">
-              <h2>Some of the top designs</h2>
-              <img className="testimonial-image" src={hd} alt="sample design" />
-              <img
-                className="testimonial-image"
-                src={hd2}
-                alt="sample design"
-              />
-              <img
-                className="testimonial-image"
-                src={hd1}
-                alt="sample design"
-              />
-            </div>
-            <div className="carousel-item">
-              <h2>Some of the top designs</h2>
-              <img
-                className="testimonial-image"
-                src={hd6}
-                alt="sample design"
-              />
-              <img
-                className="testimonial-image"
-                src={hd7}
-                alt="sample design"
-              />
-              <img
-                className="testimonial-image"
-                src={hd8}
-                alt="sample design"
-              />
-            </div>
-            <div className="carousel-item">
-              <h2>Some of the top designs</h2>
-              <img
-                className="testimonial-image"
-                src={hd9}
-                alt="sample design"
-              />
-              <img
-                className="testimonial-image"
-                src={hd10}
-                alt="sample design"
-              />
-              <img
-                className="testimonial-image"
-                src={hd11}
-                alt="sample design"
-              />
-            </div>
-          </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev"
-          >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next"
-          >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
-       */}
-      <footer id="contact">
-        <div className="contact">
-          <h1>
-            Thank you for contacting MS SPORTS! Please let us know how we can
-            help you.
-          </h1>
-          <div id="social">
-            <div className="socials">
-              <a
-                href="https://instagram.com/mssports1225/profilecard/?igshid=dHRjZDJyM2p1ajF1"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fa-brands fa-instagram"></i>
-              </a>
-            </div>
-            <div className="socials">
-              <a href="tel:+918143423272" target="_blank" rel="noreferrer">
-                <i className="fa-sharp fa-solid fa-phone"></i>
-              </a>
-            </div>
-            <div className="socials">
-              <a
-                href="https://wa.me/918143423272"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <i className="fa-brands fa-whatsapp"></i>
-              </a>
-            </div>
-          </div>
+
+          <p className="ms-footer-bottom">
+            &copy; {new Date().getFullYear()} MS Sports. All rights reserved.
+          </p>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 
