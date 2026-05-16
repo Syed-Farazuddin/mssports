@@ -1,9 +1,31 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import goodOne from "../../assets/goodone.jpg";
-import craftImage from "../../assets/interior5.jpg";
 import logo from "../../assets/logo.jpg";
 import video from "../../assets/video1.mp4";
+
+const publicUrl = process.env.PUBLIC_URL;
+const MAIN_IMAGE = `${publicUrl}/main.jpg`;
+const IMG_MAKING = `${publicUrl}/making.jpeg`;
+const IMG_MANUFACTURED = `${publicUrl}/manufactured.jpeg`;
+const IMG_BATS = `${publicUrl}/bats.jpeg`;
+
+const PROCESS_GALLERY = [
+  {
+    src: IMG_MAKING,
+    title: "Handcrafted Process",
+    caption: "Every bat shaped with skill, care, and attention to detail.",
+  },
+  {
+    src: IMG_MANUFACTURED,
+    title: "Precision Manufacturing",
+    caption: "Consistent quality from workshop to finished product.",
+  },
+  {
+    src: IMG_BATS,
+    title: "Premium Willow Bats",
+    caption: "Lightweight, well balanced Kashmir willow — ready for the crease.",
+  },
+];
 
 const CALL_NUMBER = "9866858310";
 const CALL_HREF = "tel:+919866858310";
@@ -105,13 +127,13 @@ const Home = () => {
               <i className="fa-brands fa-whatsapp" aria-hidden="true" />
               WhatsApp Us
             </a>
-            <a href="#aboutUs" className="ms-btn ms-btn--outline">
+            <a href="#bats" className="ms-btn ms-btn--outline">
               Explore Bats
             </a>
           </div>
         </div>
         <div className="ms-hero-visual">
-          <img src={goodOne} alt="MS Sports premium cricket bat" />
+          <img src={MAIN_IMAGE} alt="MS Sports — premium Kashmir willow cricket bats" />
         </div>
       </section>
 
@@ -139,8 +161,16 @@ const Home = () => {
               </li>
             </ul>
           </div>
-          <div className="ms-features-visual">
-            <img src={goodOne} alt="MS Sports Kashmir willow cricket bat" />
+          <div className="ms-process-gallery">
+            {PROCESS_GALLERY.map((item) => (
+              <figure key={item.src} className="ms-process-card">
+                <img src={item.src} alt={item.title} loading="lazy" />
+                <figcaption>
+                  <h3>{item.title}</h3>
+                  <p>{item.caption}</p>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
@@ -179,20 +209,13 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="ms-video-section" id="customize">
-        <h2>Customize Your Bats</h2>
-        <p>See how we shape excellence — from willow to winning edge.</p>
-        <div className="ms-video-wrap">
-          <video controls playsInline preload="metadata">
-            <source src={video} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </section>
-
       <section className="ms-craft">
         <div className="ms-craft-image">
-          <img src={craftImage} alt="MS Sports bat craftsmanship" />
+          <img
+            src={IMG_MAKING}
+            alt="Crafting a cricket bat at MS Sports"
+            loading="lazy"
+          />
         </div>
         <div className="ms-craft-content">
           <p className="ms-section-label">Excellence in Every Stroke</p>
@@ -203,6 +226,48 @@ const Home = () => {
             precision on the field. Whether you&apos;re a budding cricketer or a
             seasoned player, our bats are built to help you ace every shot.
           </p>
+        </div>
+      </section>
+
+      <section className="ms-showcase" id="bats">
+        <div className="ms-showcase-inner">
+          <div className="ms-showcase-copy">
+            <p className="ms-section-label">Our Collection</p>
+            <h2>Pure Kashmir Willow, Built for Champions</h2>
+            <p>
+              Explore our range of premium bats — each one lightweight, well
+              balanced, and made to help you play your best game.
+            </p>
+          </div>
+          <div className="ms-showcase-visual">
+            <img
+              src={IMG_BATS}
+              alt="MS Sports premium cricket bats collection"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="ms-video-section" id="customize">
+        <div className="ms-video-section-inner">
+          <div className="ms-video-section-copy">
+            <h2>Customize Your Bats</h2>
+            <p>See how we shape excellence — from willow to winning edge.</p>
+            <div className="ms-manufactured-visual">
+              <img
+                src={IMG_MANUFACTURED}
+                alt="MS Sports manufacturing and finished cricket bats"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div className="ms-video-wrap">
+            <video controls playsInline preload="metadata">
+              <source src={video} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </section>
 

@@ -252,8 +252,9 @@
 .ms-hero-visual img {
   position: relative;
   width: 100%;
-  max-height: 520px;
+  max-height: 560px;
   object-fit: cover;
+  object-position: center;
   border-radius: var(--ms-radius);
   box-shadow: var(--ms-shadow);
   z-index: 1;
@@ -269,10 +270,9 @@
 .ms-features-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
 .ms-section-label {
@@ -313,12 +313,44 @@
   margin-top: 0.2rem;
 }
 
-.ms-features-visual img {
-  width: 100%;
-  max-height: 420px;
-  object-fit: cover;
+.ms-process-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.ms-process-card {
+  margin: 0;
+  overflow: hidden;
   border-radius: var(--ms-radius);
-  box-shadow: var(--ms-shadow);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ms-process-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.ms-process-card figcaption {
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.ms-process-card h3 {
+  font-family: var(--ms-font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: var(--ms-cream);
+}
+
+.ms-process-card p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(248, 246, 241, 0.78);
 }
 
 /* Why choose us */
@@ -383,28 +415,85 @@
   color: var(--ms-text-muted);
 }
 
-/* Video section */
-.ms-video-section {
+/* Product showcase */
+.ms-showcase {
   padding: 5rem 2rem;
-  text-align: center;
   background: var(--ms-cream);
 }
 
-.ms-video-section h2 {
-  font-family: var(--ms-font-display);
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  color: var(--ms-green-deep);
-  margin-bottom: 0.5rem;
+.ms-showcase-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-.ms-video-section p {
+.ms-showcase-copy .ms-section-label {
+  color: var(--ms-green-mid);
+}
+
+.ms-showcase-copy h2 {
+  font-family: var(--ms-font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  color: var(--ms-green-deep);
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.ms-showcase-copy p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
   color: var(--ms-text-muted);
-  margin-bottom: 2rem;
+}
+
+.ms-showcase-visual img {
+  width: 100%;
+  border-radius: var(--ms-radius);
+  box-shadow: var(--ms-shadow);
+  object-fit: cover;
+}
+
+/* Video section */
+.ms-video-section {
+  padding: 5rem 2rem;
+  background: var(--ms-cream-dark);
+}
+
+.ms-video-section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.ms-video-section-copy h2 {
+  font-family: var(--ms-font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  color: var(--ms-green-deep);
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+
+.ms-video-section-copy > p {
+  color: var(--ms-text-muted);
+  margin: 0 0 1.25rem;
+  text-align: left;
+}
+
+.ms-manufactured-visual img {
+  width: 100%;
+  border-radius: var(--ms-radius);
+  box-shadow: var(--ms-shadow);
+  object-fit: cover;
+  display: block;
 }
 
 .ms-video-wrap {
-  max-width: 720px;
-  margin: 0 auto;
   border-radius: var(--ms-radius);
   overflow: hidden;
   box-shadow: var(--ms-shadow);
@@ -565,7 +654,12 @@
     justify-content: center;
   }
 
-  .ms-features-inner,
+  .ms-process-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .ms-showcase-inner,
+  .ms-video-section-inner,
   .ms-craft {
     grid-template-columns: 1fr;
   }
