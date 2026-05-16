@@ -1,5 +1,6 @@
-# Ignore node_modules
+# Dependencies (never commit — gh-pages cache can register broken submodules)
 node_modules/
+node_modules/.cache/
 
 # Ignore .env files
 .env
@@ -17,11 +18,12 @@ yarn-error.log*
 .bower_components/
 jspm_packages/
 
-# Build artifacts
+# Build artifacts (Netlify builds these on deploy)
 dist/
 build/
 out/
 *.cache/
+.cache/
 
 # OS-generated files
 .DS_Store
@@ -45,7 +47,6 @@ coverage/
 *.lcov
 
 # Miscellaneous
-*.lock
 *.bak
 *.pid
 *.seed
